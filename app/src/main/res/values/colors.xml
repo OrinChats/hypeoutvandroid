@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Fundo navy do Hypeou: o mesmo das telas em código (Tema.FUNDO). -->
+    <color name="hypeou_fundo">#070B16</color>
+    <color name="hypeou_fundo_medio">#0D1424</color>
+    <color name="hypeou_painel">#131B2E</color>
+    <color name="hypeou_azul">#2F80FF</color>
+    <color name="hypeou_ciano">#22D3EE</color>
+    <color name="hypeou_texto">#F2F6FD</color>
+</resources>
