@@ -1,0 +1,17 @@
+#EXTM3U
+#EXTINF:-1 tvg-name="A&E FHD H.265" tvg-logo="http://1.bp.blogspot.com/-KVAJJtXKXUE/s400/A%2526E.png" group-title="CANAIS: FILMES E SÉRIES ✨",A&E FHD H.265
+http://acaidopt.org:80/3llohwk4g9/kwf099q30o/81599.ts
+#EXTINF:-1 tvg-name="A&E" tvg-logo="http://1.bp.blogspot.com/-KVAJJtXKXUE/s400/A%2526E.png" group-title="CANAIS: FILMES E SÉRIES ✨",A&E
+http://acaidopt.org:80/3llohwk4g9/kwf099q30o/13497.ts
+#EXTINF:-1 tvg-name="A&E FHD" tvg-logo="http://1.bp.blogspot.com/-KVAJJtXKXUE/s400/A%2526E.png" group-title="CANAIS: FILMES E SÉRIES ✨",A&E FHD
+http://acaidopt.org:80/3llohwk4g9/kwf099q30o/23156.ts
+#EXTINF:-1 tvg-name="A&E HD" tvg-logo="http://1.bp.blogspot.com/-KVAJJtXKXUE/s400/A%2526E.png" group-title="CANAIS: FILMES E SÉRIES ✨",A&E HD
+http://acaidopt.org:80/3llohwk4g9/kwf099q30o/23157.ts
+#EXTINF:-1 tvg-name="SporTV 2" tvg-logo="http://2.bp.blogspot.com/-nBtQ5UkiBI4/s400/SPORTV2.png" group-title="CANAIS: ESPORTES ⚽",SporTV 2
+http://acaidopt.org:80/3llohwk4g9/kwf099q30o/35224.ts
+#EXTINF:-1 tvg-name="SporTV 2 HD" tvg-logo="http://2.bp.blogspot.com/-nBtQ5UkiBI4/s400/SPORTV2.png" group-title="CANAIS: ESPORTES ⚽",SporTV 2 HD
+http://acaidopt.org:80/3llohwk4g9/kwf099q30o/35225.ts
+#EXTINF:-1 tvg-name="Globo SP" tvg-logo="http://3.bp.blogspot.com/-globosp/s400/GLOBO.png" group-title="CANAIS: ABERTOS",Globo SP
+http://acaidopt.org:80/3llohwk4g9/kwf099q30o/18717.ts
+#EXTINF:-1 group-title="CANAIS: RÁDIOS",Rádio Globo
+http://acaidopt.org:80/3llohwk4g9/kwf099q30o/90001.ts

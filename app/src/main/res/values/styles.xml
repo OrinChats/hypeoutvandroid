@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+      Tema base: escuro, sem barra de título e sem transparência de janela.
+      Os widgets são montados em código (nada de `LayoutInflater` por cartão), mas
+      o tema continua sendo de `AppCompat` porque as Activities herdam dele.
+    -->
+    <style name="Theme.Hypeou" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/hypeou_fundo</item>
+        <item name="android:colorBackground">@color/hypeou_fundo</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <!-- Tela cheia: em TV não existe barra de status para esconder com gesto. -->
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentTransitions">false</item>
+    </style>
+
+    <!--
+      Player: fundo preto puro (as barras do vídeo somem). A tela ligada é
+      pedida por código (`FLAG_KEEP_SCREEN_ON`), porque não existe atributo de
+      tema para isso no Android 5 — que é o piso deste aplicativo.
+    -->
+    <style name="Theme.Hypeou.Player" parent="Theme.Hypeou">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:colorBackground">@android:color/black</item>
+    </style>
+
+    <!-- Login: mesma base; o ajuste de teclado virtual fica na Activity. -->
+    <style name="Theme.Hypeou.Login" parent="Theme.Hypeou" />
+</resources>

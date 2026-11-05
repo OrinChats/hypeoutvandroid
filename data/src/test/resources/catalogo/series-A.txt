@@ -1,0 +1,4 @@
+(A)mar		0	15
+A Academia		0	8
+A AcusaÃ§Ã£o		0	4
+A Agencia		0	159

@@ -1,0 +1,20 @@
+# Build
+build/
+.gradle/
+local.properties
+*.iml
+.idea/
+.kotlin/
+
+# Chaves e assinatura — NUNCA versionar
+keystore.properties
+chaves.properties
+chaves/
+*.jks
+*.keystore
+
+# Artefatos
+*.apk
+*.aab
+*.ap_
+captures/

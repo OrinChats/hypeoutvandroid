@@ -1,0 +1,22 @@
+> Copie este arquivo para `local.properties` e preencha o que você tem.
+> `local.properties` NÃO é versionado (está no .gitignore): cada máquina tem o seu.
+
+# ───────── Obrigatório ─────────
+
+# Caminho do Android SDK nesta máquina (no Windows, as barras invertidas são
+# escapadas com \\). Alternativamente, defina ANDROID_HOME no ambiente.
+sdk.dir=C\:\\Users\\SEU_USUARIO\\AppData\\Local\\Android\\Sdk
+
+# ───────── Opcional: login do Hypeou (Supabase) ─────────
+
+# Sem estes dois, a tela de login não aparece e o catálogo público (que não exige
+# conta) abre direto. Use SOMENTE a chave anônima/publicável — a `service_role`
+# dá acesso total e não pode existir dentro de um APK.
+# SUPABASE_URL=https://SEU-PROJETO.supabase.co
+# SUPABASE_ANON_KEY=sua-chave-anonima
+
+# ───────── Opcional: capas e sinopses (TMDB) ─────────
+
+# A chave pública usada pelo site do Hypeou já vem em `chaves.properties`. Se você
+# preferir a sua, descomente a linha abaixo: ela tem prioridade.
+# TMDB_KEY=sua-chave-tmdb

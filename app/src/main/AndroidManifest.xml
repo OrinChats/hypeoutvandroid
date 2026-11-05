@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Manifesto do Hypeou TV 2.1.
+
+  Três decisões que vêm das regras de TV/Fire OS documentadas em
+  docs/COMPATIBILIDADE.md:
+
+  1. `FEATURE_LEANBACK` e `FEATURE_TELEVISION` são declaradas como **não
+     obrigatórias**. Obrigatórias, a Play Store esconderia o aplicativo de
+     celulares e TV Boxes sem Leanback — e o mesmo APK é usado por sideload no
+     Fire TV, que não declara `android.software.leanback`.
+  2. `FEATURE_TOUCHSCREEN` é declarada como não obrigatória. Sem essa linha a
+     Play Store filtra o aplicativo de todo aparelho sem tela de toque, que é
+     exatamente o caso de TV e Fire TV.
+  3. `usesCleartextTraffic` fica ligado: boa parte dos canais é HTTP puro, e sem
+     isso (a partir de targetSdk 28) o Android bloqueia o stream.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Necessária para o WifiLock do ExoPlayer em reprodução de rede longa. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.television"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+
+    <application
+        android:name=".HypeouApp"
+        android:allowBackup="false"
+        android:banner="@drawable/banner"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="false"
+        android:theme="@style/Theme.Hypeou"
+        android:usesCleartextTraffic="true">
+
+        <!--
+          Uma só tela para todo o navegar: trilha lateral, categorias e conteúdo
+          trocam dentro dela. Isso mantém uma única pilha de navegação e evita o
+          custo de recriar a tela (e o catálogo) a cada troca de categoria.
+        -->
+        <activity
+            android:name=".InicioActivity"
+            android:banner="@drawable/banner"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.Hypeou">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".DetalhesActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.Hypeou" />
+
+        <!--
+          O player em paisagem fixa e com `configChanges` completo: girar ou
+          redimensionar não pode interromper a reprodução.
+        -->
+        <activity
+            android:name=".PlayerActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.Hypeou.Player" />
+
+        <activity
+            android:name=".LoginActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.Hypeou.Login"
+            android:windowSoftInputMode="adjustResize" />
+
+    </application>
+
+</manifest>
