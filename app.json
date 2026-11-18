@@ -1,0 +1,204 @@
+{
+  "expo": {
+    "name": "Hypeou TV",
+    "slug": "hypeou-tv",
+    "version": "3.2.1",
+    "orientation": "default",
+    "icon": "./assets/images/saimo_tv_logo.png",
+    "scheme": [
+      "hypeou",
+      "stremio"
+    ],
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/saimo_tv_logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0B0F2A"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.hypeou.tv",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "audio"
+        ],
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": true,
+          "NSAllowsLocalNetworking": true
+        },
+        "NSPhotoLibraryAddUsageDescription": "Hypeou TV salva seus downloads na Galeria para você assistir offline em outros apps.",
+        "NSPhotoLibraryUsageDescription": "Hypeou TV organiza seus downloads em um álbum na Galeria.",
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSLocalNetworkUsageDescription": "O Hypeou TV usa a rede local para encontrar a sua TV Box (Saimo Connect) e aparelhos com Chromecast.",
+        "NSBonjourServices": [
+          "_googlecast._tcp",
+          "_CC1AD845._googlecast._tcp"
+        ]
+      },
+      "buildNumber": "3.2.1",
+      "icon": "./assets/images/saimo_tv_icon_ios.png",
+      "privacyManifests": {
+        "NSPrivacyTracking": false,
+        "NSPrivacyTrackingDomains": [],
+        "NSPrivacyCollectedDataTypes": [],
+        "NSPrivacyAccessedAPITypes": [
+          {
+            "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryFileTimestamp",
+            "NSPrivacyAccessedAPITypeReasons": [
+              "C617.1",
+              "0A2A.1",
+              "3B52.1"
+            ]
+          },
+          {
+            "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryUserDefaults",
+            "NSPrivacyAccessedAPITypeReasons": [
+              "CA92.1"
+            ]
+          },
+          {
+            "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategorySystemBootTime",
+            "NSPrivacyAccessedAPITypeReasons": [
+              "35F9.1"
+            ]
+          },
+          {
+            "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryDiskSpace",
+            "NSPrivacyAccessedAPITypeReasons": [
+              "E174.1",
+              "85F4.1"
+            ]
+          }
+        ]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/saimo_tv_logo.png",
+        "backgroundColor": "#0A0A0F"
+      },
+      "package": "com.hypeou.tv",
+      "versionCode": 30201,
+      "permissions": [
+        "INTERNET",
+        "VIBRATE",
+        "REQUEST_INSTALL_PACKAGES",
+        "POST_NOTIFICATIONS",
+        "FOREGROUND_SERVICE",
+        "FOREGROUND_SERVICE_DATA_SYNC",
+        "RECEIVE_BOOT_COMPLETED",
+        "WAKE_LOCK",
+        "READ_MEDIA_VIDEO",
+        "READ_MEDIA_IMAGES",
+        "android.permission.ACCESS_LOCAL_NETWORK",
+        "android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/saimo_tv_logo.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-screen-orientation",
+        {
+          "initialOrientation": "DEFAULT"
+        }
+      ],
+      "./plugins/withCleartextTraffic",
+      "./plugins/withAndroidDoH",
+      [
+        "expo-video",
+        {
+          "supportsBackgroundPlayback": true,
+          "supportsPictureInPicture": true
+        }
+      ],
+      [
+        "react-native-google-cast",
+        {
+          "receiverAppId": "CC1AD845",
+          "androidPlayServicesCastFrameworkVersion": "22.3.1"
+        }
+      ],
+      "./plugins/withPictureInPicture",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/notification-icon.png",
+          "color": "#6366F1",
+          "androidMode": "default",
+          "androidCollapsedTitle": "Hypeou TV"
+        }
+      ],
+      [
+        "react-native-video",
+        {
+          "enableNotificationControls": true,
+          "enableBackgroundAudio": true,
+          "androidExtensions": {
+            "useExoplayerHls": true,
+            "useExoplayerDash": true,
+            "useExoplayerSmoothStreaming": false
+          }
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 37,
+            "targetSdkVersion": 37,
+            "buildToolsVersion": "37.0.0",
+            "enableMinifyInReleaseBuilds": true,
+            "enableShrinkResourcesInReleaseBuilds": true,
+            "extraProguardRules": "-dontwarn com.tencent.mmkv.MMKV",
+            "useLegacyPackaging": true
+          },
+          "ios": {
+            "useFrameworks": "static",
+            "enableBitcode": false,
+            "enableSceneSupport": true
+          }
+        }
+      ],
+      "expo-web-browser",
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Hypeou TV organiza seus downloads em um álbum na Galeria.",
+          "savePhotosPermission": "Hypeou TV salva seus downloads na Galeria para você assistir offline em outros apps.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ],
+      "expo-font",
+      "./plugins/withSaimoSigning",
+      "./plugins/withSaimoArquiteturas",
+      "expo-image",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#0B0F2A",
+          "drawable": {
+            "icon": "./assets/abertura/splash-vazio.xml"
+          }
+        }
+      ],
+      "expo-status-bar"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "turboModules": true
+    },
+    "jsEngine": "hermes",
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "f3fbaea8-592a-456d-a312-0e9f2e0fc553"
+      }
+    }
+  }
+}
